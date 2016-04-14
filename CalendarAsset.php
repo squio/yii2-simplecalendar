@@ -9,7 +9,7 @@ use yii\web\AssetBundle;
  */
 class CalendarAsset extends AssetBundle
 {
-    public $sourcePath = '@vendor/squio/yii2-widgets/simplecalendar/assets';
+    public $sourcePath = '@vendor/squio/yii2-simplecalendar/assets';
     public $js = [
     ];
     public $css = [

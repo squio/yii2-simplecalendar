@@ -7,9 +7,9 @@ use yii\base\Widget;
 use yii\helpers\Html;
 use donatj\SimpleCalendar;
 
-use CalendarAsset;
+use squio\widgets\simplecalendar\CalendarAsset;
 
-class SimpleCalendar extends Widget
+class Calendar extends Widget
 {
     public $events = [];
     

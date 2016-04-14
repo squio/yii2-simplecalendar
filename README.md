@@ -1,4 +1,4 @@
-Yii2  SimpleCalendar widget 
+Yii2  Simple Calendar widget 
 ======================
 
 Wrapper around [donatj/SimpleCalendar](https://github.com/donatj/SimpleCalendar)
@@ -26,7 +26,7 @@ to the require section of your `composer.json` file.
 Usage
 -----
 ```
-use squio\widgets\simplecalendar;
+use squio\widgets\simplecalendar\Calendar;
 
-echo SimpleCalendar::widget([options]);
+echo Calendar::widget([options]);
 ```
