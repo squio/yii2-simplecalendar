@@ -12,7 +12,8 @@ use squio\widgets\simplecalendar\CalendarAsset;
 class Calendar extends Widget
 {
     public $events = [];
-    
+    public $startOfWeek;
+    public $date;
 
     public function init()
     {
@@ -26,13 +27,20 @@ class Calendar extends Widget
     {
         $this->registerAssets();
         $calendar = new \donatj\SimpleCalendar();
-        
-        $calendar->setStartOfWeek('Monday');
 
-        foreach ($this->events as $date => $evtlist) {
-            foreach ($evtlist as $event) {
-                $calendar->addDailyHtml($event, $date);
-            }
+        if ($this->startOfWeek) {
+            $calendar->setStartOfWeek($this->startOfWeek);
+        }
+        if ($this->date) {
+            $calendar->setDate($this->date);
+        }
+
+        foreach ($this->events as $evtlist) {
+        	if (count($evtlist) === 3) {
+        		$calendar->addDailyHtml($evtlist[0], $evtlist[1], $evtlist[2]);
+        	} else {
+	        	$calendar->addDailyHtml($evtlist[0], $evtlist[1]);
+	        }
         }
 
         return $calendar->show(false);
